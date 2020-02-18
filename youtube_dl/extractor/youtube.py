@@ -288,6 +288,7 @@ class YoutubeEntryListBaseInfoExtractor(YoutubeBaseInfoExtractor):
                 yield entry
 
             mobj = re.search(r'data-uix-load-more-href="/?(?P<more>[^"]+)"', more_widget_html)
+            break
             if not mobj:
                 break
 
@@ -3156,6 +3157,7 @@ class YoutubeFeedsInfoExtractor(YoutubeBaseInfoExtractor):
 
             for entry in self._ids_to_results(new_ids):
                 yield entry
+                break
 
             mobj = re.search(r'data-uix-load-more-href="/?(?P<more>[^"]+)"', more_widget_html)
             if not mobj:
